@@ -10,3 +10,31 @@
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
 // Put your code here.
+// let sum = 0;
+@2
+M=0
+// let i = R1
+@1
+D=M
+@3
+M=D
+(LOOP)
+    @3
+    D=M
+    // R1が0ならエンド
+    @END
+    D;JEQ
+    D=D-1
+    @3
+    M=D
+    // カウンタを元に戻す
+    
+    @0
+    D=M
+    @2
+    M=M+D
+    @LOOP
+    0;JMP
+(END)
+0;JMP
+    
